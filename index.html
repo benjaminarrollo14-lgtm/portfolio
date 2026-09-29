@@ -114,10 +114,16 @@ kbd{background:#000;border:1px solid var(--line);border-bottom-width:2px;padding
 footer{border-top:1px solid var(--line);margin-top:44px;padding:26px 0 34px;color:var(--mut);font-size:.8rem;font-family:var(--mono);text-align:center}
 .reveal{opacity:0;transform:translateY(26px);transition:.7s cubic-bezier(.2,.7,.3,1)}
 .reveal.on{opacity:1;transform:none}
+#ystars{position:fixed;inset:0;z-index:-1;opacity:.5;pointer-events:none}
+.stickers{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:20px 0 0}
+.stk-a{font-family:var(--mono);font-size:.65rem;font-weight:700;border:2px solid #fff;border-radius:3px;padding:5px 10px;color:#fff}
+.stk-a:hover{transform:translate(-2px,-2px)}
+.stk-r{background:linear-gradient(180deg,#FF4365,#8f1030)}.stk-t{background:linear-gradient(180deg,#00D9C0,#026e61);color:#030301;border-color:#030301}.stk-k{background:linear-gradient(180deg,#B7AD99,#6e675a);color:#030301;border-color:#030301}
 </style>
 </head>
 <body>
 <div class="scan"></div>
+<canvas id="ystars"></canvas>
 <nav><div class="nav-in">
 <div class="brand"><b>~/</b>benjamin-arrollo<span>.dev × .game</span><small>UM MENDOZA · GODOT + WEB</small></div>
 <div class="nlinks"><a href="#inicio">inicio</a><a href="#sobremi">sobre-mí</a><a href="#proyectos">proyectos</a><a href="#juego">juego</a><a href="#codigo">código</a><a href="#contacto">contacto</a></div>
@@ -147,13 +153,21 @@ footer{border-top:1px solid var(--line);margin-top:44px;padding:26px 0 34px;colo
 <div class="px-arena"><div class="sprite knight"></div><div class="vs">VS</div><div class="sprite goblin"></div><span class="dmg" style="left:62%;top:30%">-20</span><span class="dmg" style="left:28%;top:18%;animation-delay:.8s;color:#00D9C0">¡CRÍTICO!</span><div class="ground"></div></div>
 </div>
 <div class="press">▶ PRESS START — FIVE SECONDS ◀</div>
-<div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap"><a class="btn btn-red" href="juego/FIVE SECONDS.html" target="_blank">▶ Jugar demo</a><a class="btn btn-ghost" href="#juego">Ver juego →</a></div>
+<div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap"><a class="btn btn-red" href="five-seconds.html">▶ Jugar demo</a><a class="btn btn-ghost" href="#juego">Ver juego →</a></div>
 </div>
 </header>
 
 <div class="marquee"><span class="mq"> GODOT 4.7 · GDSCRIPT · NEXT.JS 14 · TYPESCRIPT · PRISMA · SQLITE · TAILWIND · ASEPRITE · KRITA · JOLT · PIXEL ART · SURVIVAL HORROR · ACTION-RPG · E-COMMERCE · UNITY · HYPERCASUAL · GAME JAM · UM MENDOZA ·&nbsp; GODOT 4.7 · GDSCRIPT · NEXT.JS 14 · TYPESCRIPT · PRISMA · SQLITE · TAILWIND · ASEPRITE · KRITA · JOLT · PIXEL ART · SURVIVAL HORROR · ACTION-RPG · E-COMMERCE · UNITY · HYPERCASUAL · GAME JAM · UM MENDOZA ·&nbsp; </span></div>
 
 <!-- SOBRE MI -->
+<div class="stickers reveal">
+<a class="stk-a stk-r" href="five-seconds.html">★ PLAY FIVE SECONDS</a>
+<a class="stk-a stk-t" href="gordotruck.html">★ PLAY GORDOTRUCK</a>
+<span class="stk-a stk-k">GODOT 4.7</span>
+<span class="stk-a stk-k">UNITY JAM 2026</span>
+<span class="stk-a stk-k">100% INDIE</span>
+<a class="stk-a stk-r" href="five-seconds.html#guestbook">✎ SIGN GUESTBOOK</a>
+</div>
 <section id="sobremi" class="reveal">
 <div class="sec-k">// 01 quien-soy.init() — CV</div>
 <h2 class="sec-h">Sobre mí: UM · Videojuegos + Web</h2>
@@ -190,10 +204,10 @@ footer{border-top:1px solid var(--line);margin-top:44px;padding:26px 0 34px;colo
 <div class="bento">
 <div class="tile t-big"><div class="kicker k-game">☠ FIVE SECONDS — JUEGO1 · GODOT 4.7</div><h3>Mata para ganar tiempo (+5s por kill)</h3><p>Menú + nivel + jugador + 2 enemigos + barra de vida + texto flotante + AudioManager autoload. Export web <b>FIVE SECONDS.html/.wasm/.pck</b> lista + build <b>Juego.rar</b>.</p>
 <div class="tagrow"><span class="mtag m-game">GDScript</span><span class="mtag m-game">CharacterBody2D</span><span class="mtag m-game">IA escudo 40%</span><span class="mtag m-game">Crítico 15%</span><span class="mtag m-game">Jolt</span></div>
-<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:6px"><a class="btn btn-red" href="juego/FIVE SECONDS.html" target="_blank">▶ Jugar web</a><a class="btn btn-ghost" href="descargas/Juego.rar" download>⬇ Build PC</a><a class="btn btn-ghost" href="#juego">Detalle ↓</a></div></div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:6px"><a class="btn btn-red" href="five-seconds.html">▶ Jugar web</a><a class="btn btn-ghost" href="descargas/Juego.rar" download>⬇ Build PC</a><a class="btn btn-ghost" href="#juego">Detalle ↓</a></div></div>
 <div class="tile t-big"><div class="kicker k-game">🚚 GORDOTRUCK — JAM UNITY · HYPERCASUAL</div><h3>Camión sin frenos: esquiva y sobrevive</h3><p>Endless driver hipercasual en <b>Unity</b>: el camión avanza solo y hay que esquivar obstáculos. Jam <b>Inicio · Club de los Videojuegos Mendoza 2026</b>. Mi rol: <b>organizador + idea y dirección del juego</b> (equipo jam, build publicada por IgnaZ10). Ya jugable en navegador.</p>
 <div class="tagrow"><span class="mtag m-game">Unity</span><span class="mtag m-game">Hypercasual</span><span class="mtag m-game">Game Jam 2026</span><span class="mtag m-game">Idea + Dirección</span><span class="mtag m-game">Unity Play</span></div>
-<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:6px"><a class="btn btn-red" href="https://play.unity.com/en/games/9157ad26-00c6-4dd3-b216-115fef538e36/gordotruck" target="_blank">▶ Jugar en Unity Play</a></div></div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:6px"><a class="btn btn-red" href="gordotruck.html">▶ Jugar en GordoTruck</a></div></div>
 <div class="tile t-mid"><div class="kicker k-web">◈ PINTEREST CLONE</div><h3>Feed masonry real</h3><p>Scroll infinito, crear pin (URL/upload), tableros, likes, comentarios, búsqueda, NextAuth. Demo <b>demo@pinterest.local / demo1234</b>.</p><div class="tagrow"><span class="mtag m-web">Next 14</span><span class="mtag m-web">Prisma</span><span class="mtag m-web">Tailwind</span></div><div class="codebox"><span class="g">$</span> npm install<br><span class="g">$</span> npm run dev <span class="c">→ :3000</span></div></div>
 <div class="tile t-mid"><div class="kicker k-web">◈ FOOD STORE · PEDIDOS</div><h3>E-commerce + admin CRUD</h3><p>Catálogo, buscador, carrito, Mis Pedidos y <b>admin.html</b> con tabla (ID/precio/stock) + alta rápida validada.</p><div class="tagrow"><span class="mtag m-web">HTML5</span><span class="mtag m-web">Forms</span><span class="mtag m-web">CRUD</span></div></div>
 <div class="tile t-mid"><div class="kicker k-vio">✦ PIXEL ART · ASEPRITE</div><h3>Sprites 2D animados</h3><p>idle / walk / run / jump / fall / combo / take_hit / death / shield, flip_h direccional y hitboxes temporizadas.</p></div>
@@ -249,11 +263,12 @@ footer{border-top:1px solid var(--line);margin-top:44px;padding:26px 0 34px;colo
 <div class="contact">
 <div class="glass" style="padding:22px"><h3>✉ Emails + tel</h3><p style="color:var(--mut);font-size:.85rem">Personal, universitario y WhatsApp.</p><div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap"><a class="btn btn-red" href="mailto:benjaminarrollo14@gmail.com">✉ Personal</a><a class="btn btn-ghost" href="mailto:b.arrollo@alumno.um.edu.ar">🎓 UM</a></div><p style="font-family:var(--mono);font-size:.75rem;margin-top:10px;color:var(--mut)">benjaminarrollo14@gmail.com<br>b.arrollo@alumno.um.edu.ar<br>📱 2613833055</p></div>
 <div class="glass" style="padding:22px"><h3>⬡ GitHub</h3><p style="color:var(--mut);font-size:.85rem">Juego + webs + DB.</p><div style="margin-top:12px"><a class="btn btn-vio" href="https://github.com/benjaminarrollo14-lgtm" target="_blank">⬡ benjaminarrollo14-lgtm</a></div></div>
-<div class="glass" style="padding:22px"><h3>▶ Probar juego</h3><p style="color:var(--mut);font-size:.85rem">Demo web + build PC.</p><div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap"><a class="btn btn-red" href="juego/FIVE SECONDS.html" target="_blank">▶ Jugar</a><a class="btn btn-ghost" href="descargas/Juego.rar" download>⬇ .rar</a></div></div>
+<div class="glass" style="padding:22px"><h3>▶ Probar juego</h3><p style="color:var(--mut);font-size:.85rem">Demo web + build PC.</p><div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap"><a class="btn btn-red" href="five-seconds.html">▶ Jugar</a><a class="btn btn-ghost" href="descargas/Juego.rar" download>⬇ .rar</a></div></div>
+<div class="glass" style="padding:22px"><h3>✎ Guestbook</h3><p style="color:var(--mut);font-size:.85rem">Firma el libro de visitas Y2K.</p><div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap"><a class="btn btn-ghost" href="five-seconds.html#guestbook">✎ Firmar (FS)</a><a class="btn btn-ghost" href="gordotruck.html#guestbook">✎ Firmar (GT)</a></div></div>
 </div>
 </section>
 </div>
-<footer>© 2026 Benjamin Arrollo · WEB × GAME · UM Mendoza · GODOT + NEXT.JS · 📱 2613833055 · <a href="https://github.com/benjaminarrollo14-lgtm" target="_blank" style="text-decoration:underline">github/benjaminarrollo14-lgtm</a> · 🎨 B7AD99 · FF4365 · 030301 · 00D9C0 · FFFFF3</footer>
+<footer>© 2026 Benjamin Arrollo · WEB × GAME · UM Mendoza · GODOT + NEXT.JS · 📱 2613833055 · <a href="https://github.com/benjaminarrollo14-lgtm" target="_blank" style="text-decoration:underline">github/benjaminarrollo14-lgtm</a> · 🎨 B7AD99 · FF4365 · 030301 · 00D9C0 · FFFFF3 · <a href="five-seconds.html" style="text-decoration:underline">★ five-seconds</a> · <a href="gordotruck.html" style="text-decoration:underline">★ gordotruck</a></footer>
 <script>
 const lines=['$ npx prisma db push → SQLite OK ✓','$ git push origin main → deploy ✓'];
 const el=document.getElementById('typed');let li=0,ci=0;
@@ -276,6 +291,12 @@ requestAnimationFrame(loop)})();
 const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('on')}),{threshold:.1});
 document.querySelectorAll('.reveal').forEach(n=>io.observe(n));
 document.querySelectorAll('.tile').forEach(t=>{t.addEventListener('mousemove',e=>{const r=t.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;t.style.transform=`perspective(800px) rotateX(${-y*6}deg) rotateY(${x*6}deg) translateY(-4px)`});t.addEventListener('mouseleave',()=>t.style.transform='')});
+// Y2K starfield (capa general)
+(function(){const c=document.getElementById('ystars');if(!c)return;const x=c.getContext('2d');let S=[];
+function rs(){c.width=innerWidth;c.height=innerHeight}rs();addEventListener('resize',rs);
+for(let i=0;i<110;i++)S.push({x:Math.random(),y:Math.random(),r:Math.random()*1.3+.3,tw:Math.random()*6.28});
+(function loop(){x.clearRect(0,0,c.width,c.height);const t=Date.now()/1000;
+S.forEach(s=>{x.globalAlpha=.25+.55*Math.abs(Math.sin(t+s.tw));x.fillStyle=s.r>1?'#FFFFF3':'#B7AD99';x.fillRect(s.x*c.width,s.y*c.height,s.r,s.r)});x.globalAlpha=1;requestAnimationFrame(loop)})})();
 </script>
 </body>
 </html>
